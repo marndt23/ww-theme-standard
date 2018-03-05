@@ -103,6 +103,15 @@
     background-position: center center;
 }
 
+.bg-center {
+    max-width: 100%;
+    height: 450px;
+    padding-top: 25px;
+    background-size: cover!important;
+    background-position: center center;
+    /* border-bottom: 1px solid #bfbfbf; */
+}
+
 .fullbg-four {
     color: #fff!important;
     text-shadow: 0 0 11px #000;
@@ -111,6 +120,11 @@
     background-image: url(https://cdn02.plentymarkets.com/eq2lbkm7fl0m/frontend/Images/Homepage/Adozan.png);
     background-size: cover!important;
     background-position: center center;
+}
+
+.btn-primary {
+    background-color: #000!important;
+    margin-top: 50px;
 }
 
 .teaser {
