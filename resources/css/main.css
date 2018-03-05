@@ -1,5 +1,46 @@
 /* Enter your CSS here */
 
-.top-bar {
-    background-color: green;
+.wrapper-main .navbar {
+    background: white;
+}
+
+@media (min-width: 992px) {
+    .brand-wrapper {
+        position: relative;
+    }
+}
+
+.navbar-brand img {
+    max-height: 124px;
+}
+
+.wrapper-main #page-body {
+    margin-top: 200px;
+}
+
+#mainNavbarCollapsable ul.mainmenu {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+#mainNavbarCollapsable ul.mainmenu>li:hover {
+    background-color: #efefef;
+    color: black;
+}
+
+#mainNavbarCollapsable ul.mainmenu>li>ul {
+    background: #efefef;
+}
+
+#mainNavbarCollapsable ul.mainmenu>li>ul a {
+    color: black;
+}
+
+#mainNavbarCollapsable ul.mainmenu>li>ul>li:hover {
+    background: #636363;
+}
+
+#mainNavbarCollapsable ul.mainmenu>li>ul>li a:hover {
+    color: white;
 }
