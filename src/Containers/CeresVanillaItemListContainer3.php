@@ -1,6 +1,6 @@
 <?php
 
-namespace wwThemeStandard\Containers;
+namespace ww-theme-standard\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
