@@ -1,36 +1,36 @@
 {
     "version": "0.0.1",
     "license": "AGPL-3.0",
-    "name": "wwThemeStandard",
+    "name": "wwTheme",
     "pluginIcon": "icon_plugin_xs.png",
     "authorIcon": "icon_author_xs.png",
     "email": "kontakt@web-wikinger.de",
     "phone": "+49 461 9859 020",
     "description": "A ww theme for Ceres.",
     "shortDescription": { "de": "Ein ww-Theme für Ceres.", "en": "A ww theme for Ceres." },
-    "namespace": "wwThemeStandard",
+    "namespace": "wwTheme",
     "author": "Web Wikinger UG",
     "keywords": ["plentymarkets", "plugins", "layout", "theme", "ceres"],
     "type": "theme",
     "require": ["Ceres"],
-    "serviceProvider": "wwThemeStandard\\Providers\\CeresVanillaServiceProvider",
+    "serviceProvider": "wwTheme\\Providers\\CeresVanillaServiceProvider",
     "dataProviders": [{
-            "key": "wwThemeStandard\\Containers\\CeresVanillaContainer",
+            "key": "wwTheme\\Containers\\CeresVanillaContainer",
             "name": "Stylesheet",
             "description": "Add changes to the CSS file"
         },
         {
-            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer1",
+            "key": "wwTheme\\Containers\\CeresVanillaItemListContainer1",
             "name": "First item list",
             "description": "Display a configurable list of items in your online store"
         },
         {
-            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer2",
+            "key": "wwTheme\\Containers\\CeresVanillaItemListContainer2",
             "name": "Second item list",
             "description": "Display a configurable list of items in your online store"
         },
         {
-            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer3",
+            "key": "wwTheme\\Containers\\CeresVanillaItemListContainer3",
             "name": "Third item list",
             "description": "Display a configurable list of items in your online store"
         }
