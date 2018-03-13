@@ -1,6 +1,6 @@
 <?php
 
-namespace ww-theme-standard\Providers;
+namespace wwThemeStandard\Providers;
 
 use Ceres\Caching\NavigationCacheSettings;
 use Ceres\Caching\SideNavigationCacheSettings;
