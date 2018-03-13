@@ -1,6 +1,6 @@
-# Release Notes für CeresVanilla
+# Release Notes für wwTheme
 
-## v0.0.1 (2017-08-02)
+## v0.0.1 (2018-03-13)
 
 ### Hinzugefügt
 

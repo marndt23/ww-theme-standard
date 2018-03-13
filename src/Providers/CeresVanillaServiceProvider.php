@@ -1,6 +1,6 @@
 <?php
 
-namespace wwThemeStandard\Providers;
+namespace wwTheme\Providers;
 
 use Ceres\Caching\NavigationCacheSettings;
 use Ceres\Caching\SideNavigationCacheSettings;
@@ -14,8 +14,8 @@ use Plenty\Plugin\ConfigRepository;
 
 
 /**
- * Class CeresVanillaServiceProvider
- * @package wwThemeStandard\Providers
+ * Class wwThemeServiceProvider
+ * @package wwTheme\Providers
  */
 class CeresVanillaServiceProvider extends ServiceProvider
 {
@@ -29,13 +29,13 @@ class CeresVanillaServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
 
-        $enabledOverrides = explode(", ", $config->get("wwThemeStandard.templates.override"));
+        $enabledOverrides = explode(", ", $config->get("wwTheme.templates.override"));
 
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
         {
-            pluginApp(Container::class)->register('wwThemeStandard::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
-            pluginApp(Container::class)->register('wwThemeStandard::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
+            pluginApp(Container::class)->register('wwTheme::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
+            pluginApp(Container::class)->register('wwTheme::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
 
             $partial->set('head', 'Ceres::PageDesign.Partials.Head');
             $partial->set('header', 'Ceres::PageDesign.Partials.Header.Header');
@@ -44,22 +44,22 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             if (in_array("head", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('head', 'wwThemeStandard::PageDesign.Partials.Head');
+                $partial->set('head', 'wwTheme::PageDesign.Partials.Head');
             }
 
             if (in_array("header", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('header', 'wwThemeStandard::PageDesign.Partials.Header.Header');
+                $partial->set('header', 'wwTheme::PageDesign.Partials.Header.Header');
             }
 
             if (in_array("page_design", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('page-design', 'wwThemeStandard::PageDesign.PageDesign');
+                $partial->set('page-design', 'wwTheme::PageDesign.PageDesign');
             }
 
             if (in_array("footer", $enabledOverrides) || in_array("all", $enabledOverrides))
             {
-                $partial->set('footer', 'wwThemeStandard::PageDesign.Partials.Footer');
+                $partial->set('footer', 'wwTheme::PageDesign.Partials.Footer');
             }
 
             return false;
@@ -71,7 +71,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Homepage.Homepage');
+                $container->setTemplate('wwTheme::Homepage.Homepage');
                 return false;
             }, self::PRIORITY);
         }
@@ -82,7 +82,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.content', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Category.Content.CategoryContent');
+                $container->setTemplate('wwTheme::Category.Content.CategoryContent');
                 return false;
             }, self::PRIORITY);
         }
@@ -93,7 +93,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Category.Item.CategoryItem');
+                $container->setTemplate('wwTheme::Category.Item.CategoryItem');
                 return false;
             }, self::PRIORITY);
         }
@@ -104,7 +104,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.basket', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Basket.Basket');
+                $container->setTemplate('wwTheme::Basket.Basket');
                 return false;
             }, self::PRIORITY);
         }
@@ -115,7 +115,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.checkout', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Checkout.Checkout');
+                $container->setTemplate('wwTheme::Checkout.Checkout');
                 return false;
             }, self::PRIORITY);
         }
@@ -126,7 +126,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Checkout.OrderConfirmation');
+                $container->setTemplate('wwTheme::Checkout.OrderConfirmation');
                 return false;
             }, self::PRIORITY);
         }
@@ -137,7 +137,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.login', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Customer.Login');
+                $container->setTemplate('wwTheme::Customer.Login');
                 return false;
             }, self::PRIORITY);
         }
@@ -148,7 +148,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.register', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Customer.Register');
+                $container->setTemplate('wwTheme::Customer.Register');
                 return false;
             }, self::PRIORITY);
         }
@@ -159,7 +159,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::Item.SingleItem');
+                $container->setTemplate('wwTheme::Item.SingleItem');
                 return false;
             }, self::PRIORITY);
         }
@@ -170,7 +170,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.search', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::ItemList.ItemListView');
+                $container->setTemplate('wwTheme::ItemList.ItemListView');
                 return false;
             }, self::PRIORITY);
         }
@@ -181,7 +181,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::MyAccount.MyAccount');
+                $container->setTemplate('wwTheme::MyAccount.MyAccount');
                 return false;
             }, self::PRIORITY);
         }
@@ -192,7 +192,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.cancellation-rights', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.CancellationRights');
+                $container->setTemplate('wwTheme::StaticPages.CancellationRights');
                 return false;
             }, self::PRIORITY);
         }
@@ -203,7 +203,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.legal-disclosure', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.LegalDisclosure');
+                $container->setTemplate('wwTheme::StaticPages.LegalDisclosure');
                 return false;
             }, self::PRIORITY);
         }
@@ -214,7 +214,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.privacy-policy', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.PrivacyPolicy');
+                $container->setTemplate('wwTheme::StaticPages.PrivacyPolicy');
                 return false;
             }, self::PRIORITY);
         }
@@ -225,7 +225,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.terms-conditions', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.TermsAndConditions');
+                $container->setTemplate('wwTheme::StaticPages.TermsAndConditions');
                 return false;
             }, self::PRIORITY);
         }
@@ -236,7 +236,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.ItemNotFound');
+                $container->setTemplate('wwTheme::StaticPages.ItemNotFound');
                 return false;
             }, self::PRIORITY);
         }
@@ -247,7 +247,7 @@ class CeresVanillaServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.page-not-found', function (TemplateContainer $container)
             {
-                $container->setTemplate('wwThemeStandard::StaticPages.PageNotFound');
+                $container->setTemplate('wwTheme::StaticPages.PageNotFound');
                 return false;
             }, self::PRIORITY);
         }

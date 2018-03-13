@@ -1,6 +1,6 @@
 <?php
 
-namespace wwThemeStandard\Containers;
+namespace wwTheme\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
@@ -8,6 +8,6 @@ class CeresVanillaItemListContainer1
 {
     public function call(Twig $twig, $arg):string
     {
-        return $twig->render('wwThemeStandard::Containers.ItemLists.ItemList1', ["item" => $arg[0]]);
+        return $twig->render('wwTheme::Containers.ItemLists.ItemList1', ["item" => $arg[0]]);
     }
 }
