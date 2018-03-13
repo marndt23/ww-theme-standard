@@ -13,24 +13,24 @@
     "keywords": ["plentymarkets", "plugins", "layout", "theme", "ceres"],
     "type": "theme",
     "require": ["Ceres"],
-    "serviceProvider": "ww-theme-standard\\Providers\\CeresVanillaServiceProvider",
+    "serviceProvider": "wwThemeStandard\\Providers\\CeresVanillaServiceProvider",
     "dataProviders": [{
-            "key": "ww-theme-standard\\Containers\\CeresVanillaContainer",
+            "key": "wwThemeStandard\\Containers\\CeresVanillaContainer",
             "name": "Stylesheet",
             "description": "Add changes to the CSS file"
         },
         {
-            "key": "ww-theme-standard\\Containers\\CeresVanillaItemListContainer1",
+            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer1",
             "name": "First item list",
             "description": "Display a configurable list of items in your online store"
         },
         {
-            "key": "ww-theme-standard\\Containers\\CeresVanillaItemListContainer2",
+            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer2",
             "name": "Second item list",
             "description": "Display a configurable list of items in your online store"
         },
         {
-            "key": "ww-theme-standard\\Containers\\CeresVanillaItemListContainer3",
+            "key": "wwThemeStandard\\Containers\\CeresVanillaItemListContainer3",
             "name": "Third item list",
             "description": "Display a configurable list of items in your online store"
         }
