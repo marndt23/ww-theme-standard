@@ -112,6 +112,11 @@
     /* border-bottom: 1px solid #bfbfbf; */
 }
 
+.bg-center img {
+    display: block;
+    margin: 0 auto;
+}
+
 .fullbg-four {
     color: #fff!important;
     text-shadow: 0 0 11px #000;
