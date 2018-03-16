@@ -4,7 +4,7 @@ namespace wwTheme\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
-class CeresVanillaContainer
+class wwThemeContainer
 {
     public function call(Twig $twig):string
     {

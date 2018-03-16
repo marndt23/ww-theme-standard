@@ -17,7 +17,7 @@ use Plenty\Plugin\ConfigRepository;
  * Class wwThemeServiceProvider
  * @package wwTheme\Providers
  */
-class CeresVanillaServiceProvider extends ServiceProvider
+class wwThemeServiceProvider extends ServiceProvider
 {
     const PRIORITY = 0;
 
